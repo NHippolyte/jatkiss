@@ -12,15 +12,29 @@ class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
 
+    public function commentaires (){
+        return $this->hasMany(Commentaire::class);
+    }
+
+    public function role (){
+        return $this->belongsTo(Role::class);
+    }
+
+    public function reservations (){
+        return $this->belongsToMany(Prestation::class,'reservations')->withPivot('date');
+    }
+
     /**
      * The attributes that are mass assignable.
      *
      * @var array<int, string>
      */
     protected $fillable = [
-        'name',
+        'nom',
         'email',
-        'password',
+        'pseudo',
+        'prenom',
+        'password'
     ];
 
     /**

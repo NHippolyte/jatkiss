@@ -8,4 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Prestation extends Model
 {
     use HasFactory;
+
+    public function reservations (){
+        return $this->belongsToMany(User::class,'reservations')->withPivot('date');
+    }
 }

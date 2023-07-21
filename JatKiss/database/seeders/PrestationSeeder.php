@@ -8,9 +8,7 @@ use App\Models\Prestation;
 
 class PrestationSeeder extends Seeder
 {
-    /**
-     * Run the database seeds.
-     */
+    
     public function run(): void
     {
         Prestation::create([

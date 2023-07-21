@@ -1,6 +1,8 @@
 <?php
 
+use Illuminate\Auth\Events\Login;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,14 +16,17 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view("auth.register");
 });
 
-Route::get('hello-world', function(){
-    return view('hello-world');
-});
+Route::get('/login', [\App\Http\Controllers\AuthLoginController::class,'login' ])->name('auth.login');
+Route::post('/login', [\App\Http\Controllers\AuthLoginController::class,'login']);
+Route::get('/register', [\App\Http\Controllers\AuthRegisterController::class,'register' ])->name('auth.register');
+Route::post('/register', [\App\Http\Controllers\AuthRegisterController::class,'register' ]);
 
-Route::get('/login', 'Auth\LoginController@showLoginForm')->name('login');
-Route::post('/login', 'Auth\LoginController@login');
-Route::get('/register', 'Auth\RegisterController@showRegistrationForm')->name('register');
-Route::post('/register', 'Auth\RegisterController@register');
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/reservation', [App\Http\Controllers\ReservationController::class, 'index'])->name('reservation');
+Route::get('/contact', [App\Http\Controllers\ContactController::class, 'index'])->name('contact');
+Route::get('/infoStudio', [App\Http\Controllers\InfoStudioController::class, 'index'])->name('infoStudio');
+
+Auth::routes();
