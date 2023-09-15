@@ -1,0 +1,170 @@
+
+
+  /************************** Index Rec et Photo bloc ****************************/
+
+h2{
+    color: orange;
+}
+
+#recBloc,
+#photoBloc {
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+    text-decoration: none;
+}
+
+.photoLink{
+    display: block;
+    height: 100%;
+}
+
+a{
+    text-decoration: none !important;
+}
+
+
+#photoBloc a{
+    text-decoration: none !important;
+}
+
+#recBloc h2,
+#photoBloc h2 {
+    padding: 50px;
+    position: relative;
+    z-index: 2;
+    opacity: 1;
+    color: orange;
+}
+
+#recBloc p,
+#photoBloc p {
+    opacity: 1;
+    color: black;
+    z-index: 2;
+    position: relative;
+    background-color: rgba(255, 255, 255, 0.721);
+    border-radius: 10px;
+}
+
+#recBloc a:hover p,
+#photoBloc a:hover p {
+    transform: scale(1.03); /* Augmente la taille du texte de 5% au survol */
+    transition: transform 0.3s; /* Ajoute une transition pour une animation fluide */
+}
+
+#photoBloc::before {
+    content: ' ';
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    opacity: 0.7;
+}
+
+#recBloc::before {
+    content: ' ';
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    opacity: 0.7;
+}
+
+#recBloc::before {
+    background-image: url('../resources/img/RecIndex.jpg');
+    /* Image de fond pour #recBloc */
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 15px;
+}
+
+#photoBloc::before {
+    background-image: url('../resources/img/PhotoIndex.jpg');
+    /* Image de fond pour #photoBloc */
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 15px;
+
+}
+
+/************************** Calendrier Resa ****************************/
+
+/* Styles de base */
+body {
+    font-family: Arial, sans-serif;
+    background-color: silver !important;
+}
+
+.calendar {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* 5 jours de la semaine */
+    gap: 4px;
+    width: 80%;
+}
+
+.day {
+    background-color: #fff; /* Couleur de fond par défaut */
+    border: 1px solid #ccc;
+    padding: 5px;
+    text-align: center;
+}
+
+/* Styles pour les heures réservées */
+.reserved {
+    background-color: #ff0000; /* Rouge pour les heures réservées */
+    color: #fff; /* Texte en blanc */
+}
+td{
+    border: 1px solid black;
+}
+
+/**********************  Notre Equipe *************************/
+
+.equip li{
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    vertical-align: baseline;
+    border: 1px solid black;
+    padding: 1rem;
+    background-color: grey;
+}
+
+.equip a{
+    display: flex;
+    flex-direction: column;
+}
+
+
+.equip img{
+    border-radius: 50px;
+}
+.equip h2{
+text-align: center;
+}
+
+.equip img{
+    max-height: 100px !important;
+    max-width: 100px !important;
+    margin-right: 10vh;
+}
+
+.equipBloc{
+   width: 30vw;
+}
+
+/**********************  Location avec carte *************************/
+
+.loc{
+    text-align: center;
+}
