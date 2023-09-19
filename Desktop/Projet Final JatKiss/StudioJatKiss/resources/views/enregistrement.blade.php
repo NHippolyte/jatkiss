@@ -41,12 +41,11 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-6">
-            <img src="{{ asset('images/sabor.png')  }}">
+        <div class="col-md-6 imgRec">
+            <img src=" {{ asset('images/sabor.png')  }}">
         </div>
     </div>
 
-   
 </div>
 
 </body>

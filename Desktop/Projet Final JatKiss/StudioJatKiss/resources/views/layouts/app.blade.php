@@ -117,47 +117,51 @@
 
         <footer>
             <div id="foot">
-                <div class="footer-block">
-                    <h3>Adresse</h3>
-                    <p>118 Rue Gloriettes</p>
-                    <p>Brie-Compte-Robert, France</p>
-                </div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col">
+                            <div class="footer-block">
+                                <h3>Horaires</h3>
+                                <p> 7/7 : 24/24 <br>
+                                    Sur réservation </p>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="footer-block">
+                                <h3>Rendez-vous</h3>
+                                <p>Prenez rendez-vous en ligne</p>
+                                @guest
+                                    <a class="linkFoot" href="{{ route('login') }}">
+                                        Cliquer ici
+                                    </a>
+                                @else
+                                    <a class="linkFoot" href="{{ route('reservations.create') }}">
+                                        Cliquer ici
+                                    </a>
+                                @endguest
+                            </div>
+                        </div>
 
-                <div class="footer-block">
-                    <h3>Horaires</h3>
-                    <p> 7/7 : 24/24 </p>
-                    <p>Disponible a la réservation</p>
-                </div>
-
-                <div class="footer-block">
-                    <h3>Rendez-vous</h3>
-                    <p>Prenez rendez-vous en ligne</p>
-                    <div class="col-md-12">
-                        @guest
-                        <a href="{{ route('login') }}">
-                            Cliquer ici
-                         </a>
-                        @else
-                        <a href="{{ route('reservations.create') }}">
-                            Cliquer ici
-                         </a>
-                         @endguest
+                        <div class="col">
+                            <div class="footer-block">
+                                <h3> Réseaux Sociaux</h3>
+                                <div class="footer-links">
+                                    <a href="0783152184"><i class="fa-solid fa-phone fa-beat"></i></a> |
+                                    <a href="https://instagram.com/jatkissofficiel?igshid=MzRlODBiNWFlZA=="><i
+                                            class="fa-brands fa-instagram fa-beat"></i></a> |
+                                    <a href="https://t.snapchat.com/yWYFPCGQ"><i
+                                            class="fa-brands fa-snapchat fa-beat"></i></a> |
+                                    <a href="#"><i class="fa-brands fa-twitter fa-beat"></i></a>
+                                </div>
+                                <p><a href="#">Règlement</a> | <a href="#">Politique de
+                                        confidentialité</a></p>
+                            </div>
+                        </div>
                     </div>
-                </div>
-
-                <div class="footer-block">
-                    <h3> Réseaux Sociaux</h3>
-                    <div class="footer-links">
-                        <a href="0783152184"><i class="fa-solid fa-phone fa-beat"></i></a> |
-                        <a href="https://instagram.com/jatkissofficiel?igshid=MzRlODBiNWFlZA=="><i
-                                class="fa-brands fa-instagram fa-beat"></i></a> |
-                        <a href="https://t.snapchat.com/yWYFPCGQ"><i class="fa-brands fa-snapchat fa-beat"></i></a> |
-                        <a href="#"><i class="fa-brands fa-twitter fa-beat"></i></a>
-                    </div>
-                    <p><a href="#">Règlement</a> | <a href="#">Politique de confidentialité</a></p>
                 </div>
             </div>
-        </footer>
+    </div>
+    </footer>
 
 </body>
 

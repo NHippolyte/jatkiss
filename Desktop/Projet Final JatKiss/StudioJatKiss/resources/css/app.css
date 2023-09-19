@@ -10,6 +10,7 @@ body {
     height: 12vh;
     position: fixed;
     width: 100%;
+    z-index: 1;
 }
 
 #navDiv {
@@ -17,6 +18,11 @@ body {
     display: flex;
     justify-content: space-between;
     position: absolute;
+}
+
+nav img {
+    border-radius: 20px;
+    height: 10vh;
 }
 
 img {
@@ -28,15 +34,15 @@ img {
     /* Couleur du texte en blanc */
 }
 
-a{
+a {
     text-decoration: none;
 }
 
-.btn-link{
+.btn-link {
     color: #ceb160;
 }
 
-.navCont{
+.navCont {
     width: 93%;
 }
 
@@ -45,7 +51,7 @@ a{
 
 
 
-.resaContainer{
+.resaContainer {
     margin-top: 20vh;
 }
 
@@ -143,7 +149,7 @@ a:hover {
 
 }
 
-.btnn{
+.btnn {
     color: white;
     background-color: #ceb160;
     padding: 1rem;
@@ -192,14 +198,12 @@ td {
 
 
 /**********************  Notre Equipe *************************/
-.equip{
-    margin-bottom: 20vh;
+.equip {
+    margin-bottom: 2vh;
 }
 
 .equip li {
     list-style: none;
-    display: flex;
-    justify-content: space-between;
     text-align: center;
     vertical-align: baseline;
     border: 1px solid black;
@@ -215,14 +219,22 @@ td {
     flex-direction: column;
     text-decoration: none;
     color: #f7d473;
-    position: relative;
-    margin-top: -30px;
-    margin-left: 22vh;
+    position: absolute;
+    margin-top: 50px;
+    margin-left: 220px;
+    font-size: 1.2rem;
+    border: 1px solid #ceb160;
+    padding: 0.6rem;
+    border-radius: 10px;
 }
 
+.equip a:hover {
+    background-color: #ceb160;
+    color: white;
+}
 
-.equip img {
-    border-radius: 50px;
+.equip p {
+    margin-top: 10px;
 }
 
 .equip h2 {
@@ -232,19 +244,22 @@ td {
 .equip img {
     max-height: 100px !important;
     max-width: 100px !important;
-    margin-right: 10vh;
+    margin-right: 9vh;
+    border-radius: 50px;
+
 }
 
 .equipBloc {
-    width: 25vw;
-    height: 12vh;
     border-radius: 10px;
+    display: flex;
+    width: 100%;
 }
 
 /**********************  Location avec carte *************************/
 
 .loc {
     text-align: center;
+    margin-bottom: 20vh;
 }
 
 
@@ -275,7 +290,7 @@ td {
 
 }
 
-/********************** ListResa ********************/
+/********************** Tableau des reservations ********************/
 
 
 #tableResa table {
@@ -283,6 +298,7 @@ td {
     border-collapse: collapse;
     margin-top: 20px;
     margin: auto;
+    margin-bottom: 20vh;
 }
 
 #tableResa table,
@@ -308,6 +324,9 @@ td {
     font-size: 12px;
     margin: 2px 2px;
     cursor: pointer;
+    border-radius: 10px;
+    width: 80px;
+
 }
 
 .btn-edit {
@@ -321,10 +340,13 @@ td {
     font-size: 12px;
     margin: 2px 2px;
     cursor: pointer;
+    border-radius: 10px;
+    width: 80px;
+
 }
 
 .bodViewResa {
- 
+
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -334,7 +356,7 @@ td {
 
 
 #tableResa {
-    margin-top: 90px;
+    margin-top: 20px;
 }
 
 table {
@@ -342,7 +364,8 @@ table {
     width: 80%;
 }
 
-th, td {
+th,
+td {
     padding: 10px;
     text-align: center;
 }
@@ -385,20 +408,22 @@ tr {
 
 /************************* LOG *****************************/
 
-.card{
+.card {
     background-color: rgba(0, 0, 0, 0.472);
-                color: white;
-                text-align: center;
-                border: 3px solid #cfa430;
-                border-radius: 15px;
-                width: 35vw; margin-left: 8vh;
+    color: white;
+    text-align: center;
+    border: 3px solid #cfa430;
+    border-radius: 15px;
+    width: 35vw;
+    margin-left: 8vh;
+    margin-bottom: 20vh;
 
 }
 
 
 /************************* MAP **************************/
 
-iframe{
+iframe {
     width: 40vw;
     height: 70vh;
 }
@@ -439,13 +464,259 @@ footer h3 {
     text-decoration: none;
 }
 
+#titreViewResa {
+    margin-left: 37%;
+    color: #cfa430;
+    background-color: white;
+    padding: 1rem;
+    width: 25vw;
+    text-align: center;
+    border-radius: 10px
+}
+
+/******************** MEDIA SCREEN TELEPHONE ********************/
 
 @media screen and (max-width:768px) {
-    iframe{
-        width: 90vw;
-    margin-bottom: 50vh;
-    height: 60vh;
+
+    /************ NAVBAR **********************/
+
+    #navbar {
+        z-index: 3;
+        width: 100%;
     }
-/*     width="600" height="570"
- */    
+
+    #navbar button {
+        text-align: center;
+    }
+
+    #navbar ul {
+        background-color: #161614;
+        border-bottom-left-radius: 20px;
+        border-bottom-right-radius: 20px;
+        text-align: center;
+    }
+
+    /****************** INDEX ********************/
+
+    /************ REC ET PHOTO *************/
+    #recBloc {
+        height: 200px;
+        width: 350px;
+        margin: auto;
+        margin-bottom: 10px;
+    }
+
+    #recBloc h2 {
+        font-size: 1rem;
+    }
+
+    #recBloc p {
+        margin-top: -10px;
+        font-size: 0.7rem;
+    }
+
+
+    #photoBloc {
+        height: 200px;
+        width: 350px;
+        margin: auto;
+    }
+
+    #photoBloc h2 {
+        font-size: 1rem;
+    }
+
+    #photoBloc p {
+        margin-top: -10px;
+        font-size: 0.7rem;
+    }
+
+    /************ EQUIPE *************/
+
+    .equip li {
+        width: 360px;
+        margin-left: -30px;
+    }
+
+    .equipBloc {
+        width: 335px;
+    }
+
+    .equip a {
+        display: flex;
+        flex-direction: column;
+        text-decoration: none;
+        color: white;
+        position: absolute;
+        margin-top: 50px;
+        margin-left: 200px;
+        font-size: 0.9rem;
+        border: 1px solid #ceb160;
+        padding: 0.6rem;
+        border-radius: 10px;
+        background-color: #ceb160;
+    }
+
+
+
+    /******************* BTN PRESTA *****************/
+
+    .imgRec,
+    .imgPhoto {
+        margin-top: 20px;
+    }
+
+
+    /*********************** CARD *******************/
+
+    .card {
+        width: 350px;
+        margin-left: 10px;
+        margin-top: -40px;
+    }
+
+    .form-group {
+        width: 40vh;
+    }
+
+    .form-group input {
+        width: 90%;
+        height: 45px;
+        margin-left: 5px;
+
+    }
+
+    .card h4 {
+        font-size: 15px;
+    }
+
+    .card label {
+        font-size: 12px;
+        width: 90%;
+        margin-left: 5px;
+
+
+    }
+
+    .card select {
+        width: 90%;
+        margin-left: 5px;
+
+
+    }
+
+    .card button {
+        font-size: 0.8rem;
+    }
+
+    /************* CARTE INDEX ***************/
+    iframe {
+        width: 90vw;
+        margin-bottom: 20vh;
+        height: 60vh;
+    }
+    .loc{
+
+        margin-bottom: 0vh;
+    }
+
+
+    /******************** PHOTO REC PAGE **************/
+
+    #recPage {
+        width: 80%;
+    }
+
+    #recPage h3 {
+        width: 100%;
+        text-align: center;
+    }
+
+    #recPage p {
+        font-size: 10px;
+        width: 100%;
+    }
+
+    .imgRec img {
+        margin-top: 20px;
+        height: 400px;
+    }
+
+    .btnn{
+        margin: 35%;
+    }
+
+    .imgPhoto img{
+        margin-top: 20px;
+        height: 400px;
+    }
+    #photoPage {
+        width: 80%;
+    }
+
+    #photoPage h3 {
+        width: 100%;
+        text-align: center;
+    }
+
+    #photoPage p {
+        font-size: 10px;
+        width: 100%;
+    }
+
+
+    /**************** View RESA ****************/
+    #titreViewResa {
+        margin-left: 16%;
+        font-size: 20px;
+        padding: 0.5rem;
+        width: 250px;
+    }
+
+    /**************** tableau RESA ****************/
+
+    #tableResa {
+        width: 95%;
+        font-size: 12px;
+        margin-left: 2.5%;
+        margin-bottom: 10px;
+    }
+
+    #tableResa table {
+        margin-bottom: 300px;
+    }
+
+    #tableResa th,
+    #tableResa td {
+        padding: 5px;
+    }
+
+    .btn-delete,
+    .btn-edit {
+        height: 20px;
+        width: 70px;
+        font-size: 10px;
+    }
+
+    /********************* FOOTER ******************/
+
+    #foot p {
+        font-size: 8px;
+        margin-bottom: 0.1rem;
+    }
+
+    #foot h3 {
+        font-size: 12px;
+        margin-bottom: 0.1rem !important;
+    }
+
+    #foot i {
+        font-size: 0.5rem;
+    }
+
+    .linkFoot {
+        font-size: 7px;
+    }
+
+
 }

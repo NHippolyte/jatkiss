@@ -37,7 +37,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-6">
+        <div class="col-md-6 imgPhoto">
             <img src="{{ asset('images/lybroPhoto.png')  }}">
   </div>
     </div>

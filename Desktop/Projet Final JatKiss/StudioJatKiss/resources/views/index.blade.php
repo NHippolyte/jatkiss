@@ -54,20 +54,20 @@
 
 
         <!-- Présentation des propriétaires du studio -->
-        <div class="container mt-5">
+        <div class="container">
             <div class="row">
                 <div class="col-md-6 equip">
                     <h2>Notre Equipe</h2>
                     <ul>
                         <li style="margin-bottom: 15px">
                             <div class="equipBloc">
-                                <img src="{{ asset('images/mady.png') }}">Mady - BeatsMakers<br>
+                                <img src="{{ asset('images/mady.png') }}"> <p> Mady - BeatsMakers</p><br>
                                 <a href="https://www.instagram.com/madi_alaprod/">Découvrire</a>
                             </div>
                         </li>
                         <li>
                             <div class="equipBloc">
-                                <img src="{{ asset('images/seysey.png') }}">Sey Sey - BeatsMakers<br>
+                                <img src="{{ asset('images/seysey.png') }}"><p>Sey Sey - BeatsMakers</p><br>
                                 <a href="https://www.instagram.com/seysey_prod/">Découvrire</a>
                             </div>
                         </li>
@@ -75,13 +75,13 @@
                     <ul>
                         <li style="margin-bottom: 15px">
                             <div class="equipBloc">
-                                <img src="{{ asset('images/Paki.png') }}">Paki - Ingénieur du son<br>
+                                <img src="{{ asset('images/Paki.png') }}"><p>Paki - Ingénieur du son</p><br>
                                 <a href="https://www.instagram.com/pakinou_91/">Découvrire</a>
                             </div>
                         </li>
                         <li>
                             <div class="equipBloc">
-                                <img src="{{ asset('images/fouka.png') }}">Fouka - Ingénieur du son<br>
+                                <img src="{{ asset('images/fouka.png') }}"><p>Fouka - Ingénieur du son</p><br>
                                 <a href="https://www.instagram.com/fouka242/">Découvrire</a>
                             </div>
 
