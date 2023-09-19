@@ -3,9 +3,13 @@
 @section('content')
 
     <body id="bodViewResa">
-        <div class="viewResa" style="margin-top: 100px;">
-            <h1>Vos réservations</h1>
-            <div id="tableResa">
+        <div class="viewResa" style="margin-top: 100px;
+        position: relative;">
+            <h1 style="margin-left: 37%; color: #cfa430; background-color: white;
+            padding: 1rem; width: 25vw;
+            text-align: center;
+            border-radius: 10px;">Mes réservations</h1>
+            <div id="tableResa" class="table-responsive" style="margin-top: 90px; margin-bottom: 25vh;">
                 <table border="1">
                     <tr>
                         <th> Id </th>
@@ -20,7 +24,7 @@
                             <tr>
                                 <td> {{ $r->user_id }} </td>
                                 <td> {{ $r->prestation->nom }} </td>
-                                <td> {{ date('d-m-y', strtotime($r->date)) }} </td>
+                                <td> {{ date('d/m/y', strtotime($r->date)) }} </td>
                                 <td> {{ $r->timeD }} </td>
                                 <td> {{ $r->timeF }} </td>
                                 <td>

@@ -46,7 +46,6 @@ class UserController extends Controller
     public function edit(Request $request,User $user)
     {
         $user = auth()->user(); // Récupérez l'utilisateur connecté
-
         return view('profile', compact('user'));
         // Validez les données du formulaire de mise à jour
        
@@ -89,11 +88,4 @@ class UserController extends Controller
         //
     }
 
-
-    public function showProfile()
-    {
-        $user = auth()->user(); // Récupérez l'utilisateur connecté
-
-        return view('profile', compact('user'));
-    }
 }

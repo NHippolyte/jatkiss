@@ -1,21 +1,16 @@
 @extends('layouts.app')
 
 @section('content')
-<head>
-    <title>Réservation de séance</title>
-</head>
 <body>
-    <div class="container" style="margin-top: 150px;">
+    <div class="container resaContainer">
         <div class="row justify-content-center">
             <div class="col-md-6">
-                <div class="card" style="background-color: silver;
-                text-align: center;
-                border: none;">
+                <div class="card">
                     <div class="card-header">
                         <h4>Formulaire de Réservation</h4>
                     </div>
                     <div class="card-body">
-                        <form action="{{ route('reservations.create') }}" method="post">
+                        <form action="{{ route('reservations.store') }}" method="POST">
                             @csrf
                             <div class="form-group">
                                 <label for="pseudo">{{ __('Pseudo') }}</label>
@@ -47,6 +42,7 @@
             </div>
         </div>
     </div>
+</body>
 
     <!-- Ajoutez le lien vers le script JavaScript de Bootstrap -->
     <script>

@@ -1,11 +1,14 @@
 @extends('layouts.app')
 
 @section('content')
+<body>
 <div class="container"  id="photoPage" style="display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 100px;">
-    <h1>Séance de Photographie</h1>
+    margin-top: 100px;
+    margin-bottom: 25vh;">
+
+<h3 style="margin-bottom: 20px">Découvrez Nos Séance Photo</h3>
 
     <div class="row">
         <div class="col-md-6">
@@ -21,18 +24,22 @@
             </div>
             <div class="row">
                 <div class="col-md-12">
-                    <h2 style="text-align: center">Réserver Maintenant</h2>
-                    <a href="{{ route('reservations.create') }}"><button>
+                    <h2 style="text-align: center; margin-bottom: 30px;">Réserver Maintenant</h2>
+                    @guest
+                    <a class="btnn" role="button" href="{{ route('login') }}">
                         Cliquer ici
-                        </button> </a>
+                     </a>
+                    @else
+                    <a class="btnn" role="button" href="{{ route('reservations.create') }}">
+                        Cliquer ici
+                     </a>
+                     @endguest
                 </div>
             </div>
         </div>
         <div class="col-md-6">
             <img src="{{ asset('images/lybroPhoto.png')  }}">
-{{--             <h2>Choix de l'Ingénieur du Son</h2>
-            <p>Nous vous offrons la possibilité de choisir parmi une équipe d'ingénieurs du son talentueux pour votre séance. Ils vous aideront à atteindre le son que vous recherchez.</p>
- --}}   </div>
+  </div>
     </div>
-
+</body>
 @endsection

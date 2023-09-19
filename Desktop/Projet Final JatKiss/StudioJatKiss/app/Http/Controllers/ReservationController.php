@@ -24,8 +24,14 @@ class ReservationController extends Controller
         return redirect()->route('login');
     }
 
-    // Récupérez les réservations de l'utilisateur connecté
-    $reservations = Reservation::where('user_id', $user->id)->get();
+      // Vérifiez le rôle de l'utilisateur connecté
+      if ($user->role_id === 1) {
+        // L'utilisateur est un administrateur, récupérez toutes les réservations
+        $reservations = Reservation::all();
+    } else {
+        // L'utilisateur n'est pas administrateur, récupérez les réservations de l'utilisateur connecté
+        $reservations = Reservation::where('user_id', $user->id)->get();
+    }
 
     // Affichez la page 'viewResa' en passant les réservations comme variable
     return view('viewResa', compact('reservations'));

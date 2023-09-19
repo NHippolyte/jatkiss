@@ -1,15 +1,16 @@
 @extends('layouts.app')
 
 @section('content')
+<body>
 <div class="container" id="recPage" style="display: flex;
     flex-direction: column;
-    align-items: center; margin-top: 100px;">
+    align-items: center; margin-top: 100px; margin-bottom: 25vh;">
 
-    <h3>Découvrez Nos Séance d'Enregistrement</h3>
+<h3 style="margin-bottom: 20px">Découvrez Nos Séance d'Enregistrement</h3>
 
     <div class="row">
         <div class="col-md-6">
-            <h2>Tarif à l'Heure</h2>
+            <h2 style="text-align: center">Tarif à l'Heure</h2>
             <p style="text-align: center">Dans notre studio basé à Brie-Comte-Robert (77). <br>
                  Nous vous proposons un service d'enregistrement de haute qualité à un tarif abordable de 30€ par heure.<br>
                   Que vous soyez musicien, groupe, chanteur soliste ou podcasteur, notre studio est l'endroit idéal pour donner vie à vos projets audio.<br> 
@@ -21,28 +22,32 @@
                  Nous sommes là pour répondre à toutes vos questions et vous aider à concrétiser vos idées musicales ou audiovisuelles.<br>
                   Ne laissez pas vos projets en attente, venez profiter de notre studio professionnel dès maintenant.</p>
             <div class="row">
-                <div class="col-md-6">
-                    <h2>Horaires </h2> <p>Disponibles Bientôt... <br> Nous travaillons constamment à l'ajout de nouvelles plages horaires pour répondre à vos besoins. Revenez bientôt pour consulter nos horaires disponibles.</p>
-                </div>
-                <div class="col-md-6">
+                <div class="col-md-12">
+                    <h2 style="text-align: center">Horaires </h2> <p style="text-align: center"> Disponibles Bientôt... <br> Nous travaillons constamment à l'ajout de nouvelles plages horaires pour répondre à vos besoins. Revenez bientôt pour consulter nos horaires disponibles.</p>
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-12" style="display: flex; justify-content: center; flex-direction: column">
-                    <h2 style="text-align: center">Réserver Maintenant</h2>
-                    <a href="{{ route('reservations.create') }}"><button>
-                            Cliquer ici
-                        </button> </a>
+                <div class="col-md-12">
+                    <h2 style="text-align: center; margin-bottom: 30px;">Réserver Maintenant</h2>
+                    @guest
+                    <a class="btnn" role="button" href="{{ route('login') }}">
+                        Cliquer ici
+                     </a>
+                    @else
+                    <a class="btnn" role="button" href="{{ route('reservations.create') }}">
+                        Cliquer ici
+                     </a>
+                     @endguest
                 </div>
             </div>
         </div>
         <div class="col-md-6">
             <img src="{{ asset('images/sabor.png')  }}">
-{{--             <h2>Choix de l'Ingénieur du Son</h2>
-            <p>Nous vous offrons la possibilité de choisir parmi une équipe d'ingénieurs du son talentueux pour votre séance. Ils vous aideront à atteindre le son que vous recherchez.</p>
- --}}        </div>
+        </div>
     </div>
 
    
 </div>
+
+</body>
 @endsection

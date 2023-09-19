@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Auth\LogoutController;
 use Illuminate\Support\Facades\Auth; 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
@@ -11,14 +12,12 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ReservationController;
 
 
-Route::get('/', function () {
-    return view('auth/login');
-});
-
 Route::post('/login', [UserController::class, 'login']);
 Route::get('/login', [UserController::class, 'showLoginForm'])->name('login');
-Route::post('/register', [UserController::class,'register'])->name('register');
 Route::get('/register', [UserController::class,'showRegisterForm'])->name('register');
+Route::post('/register', [UserController::class,'register'])->name('register');
+
+Route::post('/logout', [LogoutController::class,'destroy'])->name('logout');
 
 Route::resource('/reservations', ReservationController::class);
 
@@ -30,6 +29,11 @@ Route::get('/notFound', [ConfirmationController::class, 'showNotFound'])->name('
 Auth::routes();
 
 Route::get('/index', [HomeController::class, 'showIndex'])->name('index');
+Route::get('/profile', [HomeController::class, 'showProfile'])->name('showProfile');
+
+Route::get('/', function(){
+    return view('index');
+});
 
 Route::get('/seance-enregistrement', [SeanceController::class, 'enregistrement'])->name('seance.enregistrement');
 Route::get('/seance-photographie', [SeanceController::class, 'photographie'])->name('seance.photographie');
@@ -44,3 +48,4 @@ Route::get('/getViewResa', [viewResaController::class, 'getViewResa'])->name('ge
 Route::delete('/reservation/{resa_id}', [viewResaController::class, 'destroy'])->name('reservation.destroy');
 Route::get('/reservation/{resa_id}/edit', [viewResaController::class, 'edit'])->name('edit');
 Route::put('/reservation/{resa_id}', [viewResaController::class, 'update'])->name('reservation.update'); */
+

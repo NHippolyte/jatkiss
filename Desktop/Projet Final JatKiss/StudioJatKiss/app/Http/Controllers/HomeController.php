@@ -11,9 +11,12 @@ class HomeController extends Controller
         return view('index');
     }
 
-    public function __construct()
+
+    public function showProfile()
     {
-        $this->middleware('auth');
+        $user = auth()->user(); // Récupérez l'utilisateur connecté
+
+        return view('profile', compact('user'));
     }
 
 }
